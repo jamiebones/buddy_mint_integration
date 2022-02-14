@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+    
+<!-- Mirrored from www.firebusd.finance/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Feb 2022 19:04:11 GMT -->
+<head>
+        <!-- meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="firebusd, fire, busd, busdM, busdT, token, finance, crypto, farm, yieldfarm, yield, blockchain, bsc, bitcoin, bit, ethereum, money">
+        <meta name="author" content="FireCrypto">
+        <meta name="description" content="The FireBusd Token aims to create sustainable income before the long term accessible to all investors. You can find us in the channels mentioned below">
+        <meta property="og:title" content="FireBusd">
+        <meta property="og:site_name" content="FireBusd">
+        <meta property="og:url" content="index.html">
+        <meta property="og:description" content="The FireBusd Token aims to create sustainable income before the long term accessible to all investors. You can find us in the channels mentioned below">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="assets/icons/index.html">
+        <title>FireBusd</title>
+        <!-- icons -->
+        <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+        <link rel="icon" href="assets/icons/favicon-32x32.png"/>
+        <!-- Google Fonts -->
+        <link href="../fonts.googleapis.com/cssdcff.css?family=Comfortaa:300,400,700" rel="stylesheet">
+        <link href="../fonts.googleapis.com/css3bbe.css?family=Montserrat:100i,200,300,400,700,800,900" rel="stylesheet">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="css/plugins/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <script src="../use.fontawesome.com/ba3f9c528b.js"></script>
+        <!-- Timeline CSS -->
+        <link rel="stylesheet" type="text/css" href="css/plugins/timeline.min.css">
+        <!-- style CSS -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" type="text/css" href="css/responsive.css">
+        <script src="../ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../www.gstatic.com/charts/loader.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFQY8M0KCK"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-SFQY8M0KCK');
+        </script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart, timeline']});
+            google.charts.setOnLoadCallback(drawVisualization);
+        
+            function drawVisualization() {
+                var action = "getData";
+                var jsonData = $.ajax({
+                    url: "./ajax/chart.php",
+                    method: "POST",
+                    dataType: "JSON",
+                    async: false,
+                    data: {action: action}
+                }).responseJSON;
+
+                var container = document.getElementById('chart_div');
+                var chart = new google.visualization.Timeline(container);
+                var data = new google.visualization.arrayToDataTable(jsonData);
+                var options = {
+                    width: "100%",
+                    height: 650,
+                    backgroundColor: 'transparent',
+                    colors: ['#f9b707', '#aaa'],
+                    legend: 'none',
+                    curveType: 'function',
+                    bar: {groupWidth: '85%'},
+                    hAxis: {textStyle:{color: '#e3e3e3'}},
+                    vAxis: {textStyle:{color: '#e3e3e3'},gridlines:{color: '#333',count: 0}},
+                    seriesType: 'bars',
+                    series: {1: {type: 'line'}}
+                };
+                var chart = new google.visualization.ComboChart(container);
+                chart.draw(data, options);
+            }
+            $(window).resize(function(){
+                drawVisualization();
+            });
+        </script>
+    </head>
+
+    <body data-spy="scroll" data-offset="80">
+        
+        <!-- loading -->
+        <div id="loading">
+            <div id="loading-center">
+                <div class='loader loader2'>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- loading End -->
+
+        <!-- HEADER -->
+        <section class="first-screen">
+            <header class="py-2">
+                <nav class="navbar navbar-expand-lg mt-1">
+                    <a href="index-2.html#"><div class="logo"><img src="assets/images/firebusd-logo-header-transparent.png" width=200 heighth=212 alt="logo"/></div></a>
+                    <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon menu"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mx-auto text-center navMI">
+                        <li class="nav-item active btnHeader">
+                            <a href="assets/WhitePaper.pdf" target="_blank"><button style="cursor: pointer;" type="button" title="Whitepaper" class="btnprimary"><span>WhitePaper</span></button></a>
+                        </li>
+                        <li class="nav-item btnHeader">
+                            <button style="cursor: pointer;" type="button" id="contractLink" title="SmartContract" class="btnprimary tel"><span>SmartContract</span></button>   
+                        </li>
+                        <li class="nav-item btnHeader">
+                            <a href="assets/HazeSecurity_FireBusd.pdf" target="_blank"><button style="cursor: pointer;" type="button" title="Audit" class="btnprimary tel"><span>Audit</span></button></a>
+                        </li>
+                        <li class="nav-item btnHeader marginL">
+                            <button style="cursor: pointer;" type="button" title="FAQ" class="btnprimary faq-btn tel"><span>FAQ</span></button>
+                        </li>
+                      </ul>
+                      <div class="navMI py-2">
+                        <button style="cursor: pointer;" type="button" class="btnprimary connect mx-auto" id="connect-btn" onclick="Connect()"><span>Connect +</span></button>
+                      </div>
+                    </div>
+                  </nav>
+            </header>        
+        </section>
+        <!-- FINE HEADER -->
+
+        <!-- banner -->
+        <div id="wave" class="iq-banner">
+            <div class="row banner-info Mcontainer mydiv">
+
+                <!-- PIRCE & USER -->
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                    <h6><b>FIREBUSD PRICE :    <span id="token-priceM"><b>    0.00</b></span></b></h6>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                    <h6><b>TOTAL USER : <span id="totalUsers"><b>0.00</b></span></b></h6>
+                </div>
+                <div class="col-12">
+                    <hr class="mb-4 mt-4 ">          
+                </div>   
+                <!-- PIRCE & USER -->
+
+                <!-- MINT --> 
+                <div class="col-lg-4 col-md-12 col-sm-12 text-center mint">
+                    <h3 class="title-header mt-2">MINT FIREBUSD</h3>
+                    <div class="mycontainer2 mt-1">
+                        <p> Mint FIREBUSD by staking your BUSD You can stake as many times as you want You cannot unstake this BUSD </p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6 my-2">
+                                <b><h>APR</h</b>
+                            </div>
+                            <div class="col-6 my-2" id="APY_M">
+                                <span><b><h7>...</h7></b></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6 my-2">
+                                <b><h7>Stake</h7></b>
+                            </div>
+                            <div class="col-6 my-2" id="user-BUSD-staked">
+                                <span><b><h7>...</h7></b></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6 my-2">
+                                <b><h7>Staked</h7></b>
+                            </div>
+                            <div class="col-6 my-2" id="total-BUSD-staked">
+                                <span><b><h7>...</h7></b></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row my-3">
+                            <div class="col-12">
+                                <h5 class="mb-2">FIREBUSD Earned</h5>
+                            </div>
+                            <div class="col-12">
+                                <h5><span id="user-unClaimed-M"><b>...</b></span></h5>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-12 my-4">
+                            <button type="button" class="btn-secondary mx-auto" id="claimMButton">Claim</button>
+                        </div>
+                        <hr class="my-3">
+                        <div class="row justify-content-center">
+                            <h5 class="mb-3 mt-2"><b>BUSD</b> Balance:<b> <span id="user-BUSD-balance-1"><b>...</b></span></b></h5>
+                            <div class="col-12">
+                                <hr class="my-2">
+                            </div>
+                            <p id="minInvest"> Minimum deposit 30 BUSD</p>
+                            <div class="col-7">
+                                <div class="amount-field">
+                                    <input type="number" class="amount-input" value="1" min="0" id="input-approve"/>
+                                    <button class="amount-field-button" onclick="SetMaxBUSD1()">Max</button>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex">
+                                <span><button type="button" class="btnprimary" id="approveButton" onclick="approveBUSD()">Approve</button></span>
+                            </div>
+                            <div class="col-7 mt-3 d-flex">
+                                <div class="deposit-block">
+                                    <div class="amount-field">
+                                        <input type="number" class="amount-input" value="1" min="0" id="input-busd"/>
+                                        <span><button class="amount-field-button" id="maxAmountButton" onclick="SetMaxBUSD()">Max</button></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 mt-3 d-flex">
+                                <span><button type="button" class="btnprimary" id="investButton" onclick="stakeM()">Invest</button></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FINE MINT -->
+    
+                <!-- STAKE -->
+                <div class="col-lg-4 col-md-12 col-sm-12 text-center">
+                    <h3 class="title-header mt-2">STAKE FIREBUSD</h3>
+                    <div class="mycontainer2 mt-1">
+                        <p> Stake FIREBUSD to earn it You can stake as many times as you want You can unstake this FIREBUSD after 7 days </p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6 my-2">
+                                <b><h7>APR</h7></b>
+                            </div>
+                            <div class="col-6 my-2" id="APY_T">
+                                <span><b><h7>...</h7></b></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6 my-2">
+                                <b><h7>Stake</h7></b>
+                            </div>
+                            <div class="col-6 my-2" id="user-token-staked">
+                                <span><b><h7>...</h7></b></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6 my-2">
+                                <b><h7>Staked</h7></b>
+                            </div>
+                            <div class="col-6 my-2" id="total-token-staked">
+                                <span><b><h7>...</h7></b></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row my-3">
+                            <div class="col-12">
+                                <h5 class="mb-2">FIREBUSD Earned</h5>
+                            </div>
+                            <div class="col-12">
+                                <h5><span id="user-unClaimed-T"><b>...</b></span></h5>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-12 my-2" id="time-tounstake"><p><span>...</b></span></p></div>
+                        <hr>
+                        <div class="row my-4">
+                            <div class="col-6 d-flex justify-content-end">
+                                <button type="button" class="btnprimary" id="claimTButton">Claim</button>
+                            </div>
+                            <div class="col-6 d-flex justify-content-start">
+                                <button type="button" class="btn-special" id="unstakeButton">Unstake</button>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        <div class="row d-flex justify-content-center">
+                            <h5 class="my-1">FIREBUSD Balance:<b> <span id="user-token-balance-1"><b>...</b></span></b></h5>
+                            <div class="col-12">
+                                <hr class="my-4">
+                            </div>
+                            <div>
+                                <p>There is no minimum to stake</p>
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="deposit-block">
+                                            <div class="amount-field">
+                                                <input type="number" class="amount-input" value="1" min="0" id="input-2"/>
+                                                <span><button class="amount-field-button" id="maxAmountButton" onclick="SetMaxBUSDToken()">Max</button></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <span><button type="button" class="btnprimary" id="stakeButton" onclick="stakeT('#input-2')">Stake</button></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FINE STAKE -->
+    
+                <!-- SELL -->
+                <div class="col-lg-4 col-md-12 col-sm-12 text-center">
+                    <h3 class="title-header mt-2">SELL FIREBUSD</h3>
+                    <div class="mycontainer2 mt-1">
+                        <p> Sell the earned tokens <br> Only 40000 tokens can be sold per day Earn BUSD </p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6 my-2">
+                                <b><h7>Circulation</h7></b>
+                            </div>
+                            <div class="col-6 my-2 total-supply">
+                                <span><b><h7>...</h7></b></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6 my-2">
+                                <b><h7>Available</h7></b>
+                            </div>
+                            <div class="col-6 my-2 available-supply">
+                                <span><b><h7>...</h7></b></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6 my-2">
+                                <b><h7>Reset sell</h7></b>
+                            </div>
+                            <div class="col-6 my-2" id="time-tonextday">
+                                <span><b><h7>...</h7></b></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row my-4">
+                            <div class="col-12">
+                                <h5 class="mb-2">FIREBUSD Price</h5>
+                            </div>
+                            <div class="col-12">
+                                <h5><span id="token-price"><b>...</b></span></h5>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row my-4">
+                            <div class="col-6 d-flex justify-content-end">
+                                <b><h6>You will get:</h6></b>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center">
+                                <h5 id="sell-calc"><b>0.00</b></h5>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        <div class="row d-flex justify-content-center">
+                            <h5 class="my-3">FIREBUSD Balance:<b> <span id="user-token-balance-2"><b>...</b></span></b></h5>
+                            <div class="col-12">
+                                <hr class="my-4">
+                            </div>
+                            <div class="mb-4">
+                                <p>Available for sale</p>
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="deposit-block">
+                                            <div class="amount-field">
+                                                <input type="number" class="amount-input" value="1" min="0" id="input-3"/>
+                                                <button class="amount-field-button" onclick="SetMaxBUSDTokenToSell()">Max</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <button type="button" class="btnprimary" id="sellButton" onclick="sell('#input-3')">Sell</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FINE SELL -->
+            </div>
+        </div>
+        <!-- banner -->
+        
+        <!-- Main-Contain -->
+        <div class="main-contain">
+
+            <div class="row Mcontainer">
+                <!-- REFFERAL -->
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center mt-5">
+                    <h2 class="title-header">REFERRAL</h2>
+                    <div class="mycontainer3 mt-2">
+                        <h6 class="title-footer-dashboard mb-3"> 
+                            Your Referral Link: <input type="text" value="..." id="ref-link"> <button class="btn-copy" onclick="copyToClipboard('#ref-link')"></button><span class="title-copy" id="copiedSuccessfully" style="display: none;">Copied successfully !</span>
+                        </h6>
+                        <hr class="my-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <h6>Referral Earned Available</h6>
+                                <h6><b id="referral-available">...</b></h6>
+                            </div>
+                            <div class="col-6">
+                                <h6>Total Referral Earned</h6>
+                                <h6><b id="referral-earned">...</b></h6>
+                            </div>
+                            <div class="col-12 my-2">
+                            </div>
+                            <div class="col-6">
+                                <h6>Total Referral Withdrawn</h6>
+                                <h6><b id="referral-withdrawn">...</b></h6>
+                            </div>
+                            <div class="col-6">
+                                <h6>Total Referrals</h6>
+                                <h6><b id="total-referrals">...</b></h6>
+                            </div>
+                        </div>
+                        <hr class="my-3">
+                        <div class="col-12">
+                            <button type="button" class="btn-secondary mx-auto" id="withdraw-referral-btn">Withdraw</button>
+                        </div>
+                        <hr class="my-3">
+                        <div class="row my-3">
+                            <div class="col-12">
+                                <b><h5 class="mb-3">Earn BUSD for promotion:</h5></b>
+                                <b><h7>2% from each level 1 referral deposits</h7></b> 
+                                <br>
+                                <b><h7>1% from each level 2 referral deposits</h7></b>
+                                <br>
+                                <b><h7>1% from each level 3 referral deposits</h7></b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- REFFERAL -->
+
+                <!-- AIRDROP -->
+                <div class="col-lg-6 col-md-12 col-sm-12 text-center mt-5">
+                    <h2 class="title-header">AIRDROP</h2>
+                    <div class="mycontainer3 mt-2">
+                        Complete the challenges to get airdrop <br> You can receive 100 FIREBUSD every 7 days
+                        <hr class="my-3">
+                        <div class="row">
+                            <div class="col-lg-4" id="airdrop-c-1">Have at least <b>...</b> BUSD in Stake<span><br>❌</span>
+                            </div>
+                            <div class="col-lg-4" id="airdrop-c-2">7 days since the last airdrop claim<span><br>❌</span>
+                            </div>
+                            <div class="col-lg-4" id="airdrop-c-3">Have 5 <br>  more referrals<span><br>❌</span>
+                            </div>
+                            <div class="col-12 my-3">
+                                <hr>
+                            </div>
+                            <div class="col-8">
+                                <h4>Available for Airdrop</h4>
+                            </div>
+                            <div class="col-4">
+                                <h4><span id="available-airdrop"><b>0</b></span></h4>
+                            </div>
+                            <div class="col-12">
+                                <hr class="my-3">
+                            </div>
+                            <div class="col-12">
+                                <button type="button" class="btn-secondary" id="claimAButton">Claim</button>
+                            </div>
+                            <div class="col-12">
+                                <hr class="my-3 ">
+                            </div>
+                            <div class="col-12 my-3">
+                                <h6> In the coming days there will be many giveaway</h6>
+                                <h6 class="mt-2">first giveaway can be found on the <a href="https://t.me/FireBusdGiveaways">@FireBusdGiveaway</a></h6>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+                <!-- AIRDROP -->
+            </div>
+
+            <!-- Tokenomics -->
+            <section id="token" class="iq-Tranding-platform light-bg overview-block-ptb mt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="heading-title">
+                                <h2 class="title iq-tw-6">Tokenomics</h2>
+                                <p> Use BUSD to earn FIREBUSD Tokens to stake (or sell for BUSD)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="heading-title2">
+                                <small class="iq-font-green">Token Information</small>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td>Token Name:</td>
+                                            <td>FireBusd</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Token Symbole:</td>
+                                            <td>FIREBUSD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Network:</td>
+                                            <td>Binance Smart Chain (BSC)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Token Standard:</td>
+                                            <td>BEP20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Supply:</td>
+                                            <td id="limit-supply">1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Circulation Supply:</td>
+                                            <td class="total-supply">...</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Available Supply:</td>
+                                            <td class="available-supply">...</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contract:</td>
+                                            <td>
+                                                <a href="https://bscscan.com/address/0x08aF0ecc3B8194809730bA7013C637c7e16D2f9c" target="_blank">0x08aF0ecc3B8194809730bA7013C637c7e16D2f9c</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <p>
+                                <span class="orange">Note:</span> Basically theese fees are useful to support and make our project better day by day
+                            </p>
+                        </div>                                    
+                    </div>
+                </div>
+            </section>
+            <!-- Tokenomics END -->
+
+            <!-- CHART -->
+            <div id="chart" class="row chartC">
+                <div class="col-12 text-center mt-5">
+                    <h2 class="title iq-tw-6">FireBusd Chart</h2>
+                    <!-- <div id="chart_wrapper"> -->
+                        <div id="chart_div"></div>
+                    <!-- </div> -->
+                </div>
+            </div>
+            <!-- CHART -->
+
+            <!-- ROADMAP -->
+            <section id="road" class="iq-timeline iq-bg-over overview-block-ptb">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="heading-title">
+                                <small class="iq-font-green">what's next?</small>
+                                <h2 class="title iq-tw-6">Roadmap</h2>
+                                <p>FireBusd is still being actively developed. Have a look at our road map for the upcoming improvements and events 👀</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="timeline">
+                                <div class="timeline__wrap">
+                                    <div class="timeline__items">
+                                        <div class="timeline__item">
+                                            <div class="timeline__content">
+                                                <h2>January 2022</h2><ul>
+                                                    <li>✔️ Website Launch</li>
+                                                    <li>✔️ App Launch on Testnet</li>
+                                                    <li>✔️ Social Media</li>
+                                                    <li>✔️ Beta testing</li>
+                                                    <li>✔️ SmartContract Release</li>
+                                                    <li>✔️ Initial Marketing</li>
+                                                    <li>✔️ Listing DappRadar</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="timeline__item">
+                                            <div class="timeline__content">
+                                                <h2>February 2022</h2>
+                                                <ul>    
+                                                    <li>✔️ Website update</li>
+                                                    <li>✔️ Second marketing wave</li>
+                                                    <li>✔️ New Price 0.10$</li>
+                                                    <li>✔️ FireBusd graphic</li>
+                                                    <li>✔️ New Giveaway</li>
+                                                    <li>✔️ New Audit</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="timeline__item">
+                                            <div class="timeline__content">
+                                                <h2>March 2022</h2>
+                                                <ul>
+                                                    <li>⏳️ Third marketing wave</li>
+                                                    <li>⏳️ New Price 1.00$</li>
+                                                    <li>⏳️ Native Application</li>
+                                                    <li>⏳️ NFT creation FireBusd</li>
+                                                    <li>⏳️ Marketplace NFT</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="timeline__item">
+                                            <div class="timeline__content">
+                                                <h2>April 2022</h2>
+                                                <ul>
+                                                    <li>⏳️ Coming Soon</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="timeline__item">
+                                            <div class="timeline__content">
+                                                <h2>May 2022</h2>
+                                                <ul>
+                                                    <li>⏳️ Coming Soon</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ROADMAP -->
+           
+            <!-- MARKETING -->
+            <hr class="Mcontainer">
+            <section id="product" class="overview-block-pt">
+                <div class="container">
+                    <div class="row flex-row-reverse">
+                        <div class="col-lg-5 align-self-center">
+                            <img src="assets/images/banner/banner-img.svg" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-lg-7 align-self-center">
+                            <div class="heading-title left">
+                                <h2 class="iq-tw-6"><span class="icon-fix-weight">👨‍🚀</span> For Community Users</h2>
+                            </div>
+                            <p>The FireBusd Project aims to create
+                                sustainable income before the long term
+                                accessible to all investors.
+                                <br>
+                                <br>You can find us in the channels
+                                mentioned below</p>
+                                <p>
+                                    <h7>Telegram: <a href="https://t.me/firebusd0" target="_blank">https://t.me/firebusd0</a></h7><br>
+                                    <h7>Audit: <a href="https://hazecrypto.net/audit/FireBusd" target="_blank">https://hazecrypto.net/audit/FireBusd</a></h7><br>
+                                    <h7>Dapp Radar: <a href="https://dappradar.com/binance-smart-chain/high-risk/firebusd" target="_blank">https://dappradar.com/binance-smart-chain/high-risk/firebusd</a></h7><br>
+                                </p>
+                                <button type="button" class="btnprimary mt-3"><a href="contact/index.html" target="_blank"><span>Contacts</span></a></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="overview-block-ptb">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 align-self-center">
+                            <img src="assets/images/index-about.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-lg-7 align-self-center">
+                            <div class="heading-title left">
+                                <h2 class="iq-tw-6"><span class="icon-fix-weight">🧙</span>Promoters</h2>
+                            </div>
+                                <h7>The Defi Guys : <a href="https://youtu.be/6_D2NEG-BTk" target="_blank">https://youtu.be/6_D2NEG-BTk</a></h7><br>
+                                <h7>Murdoc DEFI : <a href="https://youtu.be/MFpEhbisjCw" target="_blank">https://youtu.be/MFpEhbisjCw</a></h7><br>
+                                <h7>Jack'sPassiveIncome : <a href="https://www.youtube.com/watch?v=6DHu57MyypA&amp;t=3s" target="_blank">https://www.youtube.com/watch?v=6DHu57MyypA&t=3s</a></h7><br>
+                                <h7>Crypto Kavi : <a href="https://youtu.be/giqVeqMWP-w" target="_blank">https://youtu.be/giqVeqMWP-w</a></h7><br>
+                                <h7>Predir Capital : <a href="https://youtu.be/6U8zB7HV_S4" target="_blank">https://youtu.be/6U8zB7HV_S4</a></h7><br>
+                                <h7>CryptoLifestyle : <a href="https://youtu.be/y2s_5-BTwg0" target="_blank">https://youtu.be/y2s_5-BTwg0</a></h7><br>
+                                <h7>Felix Monopoly : <a href="https://youtu.be/zz0sOKRuhPg" target="_blank">https://youtu.be/zz0sOKRuhPg</a></h7><br>
+                                <button type="button" class="btnprimary mt-3"><a href="contact/index.html" target="_blank"><span>Contacts</span></a></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr class="Mcontainer">
+            <!-- MARKETING  -->
+
+            <!-- FOOTER -->
+            <div class="container-fluid iq-pall my-5">
+                <div class="footer-bottom iq-ptb-20 dark-bg ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="iq-copyright iq-font-white">© Copyright 2021 FireBusd Developed with <a target="_blank" href="mailto:postmaster@firebusd.finance">FireCrypto</a></div>
+                                <a target="_blank" href="https://t.me/firebusd0">
+                                    <i class="fa fa-telegram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fine FOOTER -->
+
+            <!-- FAQ -->
+            <div class="wrapper-dark">
+                <div class="container-faq">
+                    <div class="main-container-center">
+                        <button type="button" class="close-window"></button>
+                        <div class="faq-block">
+                            <div class="window-header">
+                                <h2 class="title-window">FAQ</h2>
+                            </div>
+                            <div class="container-list-faq">
+                                <ul class="list-faq">
+                                    <li class="item-faq">
+                                        <div class="header-item-faq">
+                                            <button type="button" class="close-faq-item"></button>
+                                            <h3 class="title-faq-item">
+                                                How to invest in FIREBUSD? 
+                                            </h3>
+                                        </div>
+                                        <div class="container-info-faq">
+                                            <p>
+                                                Enter BUSD into the machine and earn daily staking rewards in FIREBUSD tokens (2% per day). You can claim your FIREBUSD rewards at anytime. You cannot unstake your BUSD tokens.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="item-faq">
+                                        <div class="header-item-faq">
+                                            <button type="button" class="close-faq-item"></button>
+                                            <h3 class="title-faq-item">
+                                                In what I get the daily percentage? 
+                                            </h3>
+                                        </div>
+                                        <div class="container-info-faq">
+                                            <p>
+                                                You will earn FIREBUSD tokens as a percentage of BUSD invested irrespective of the FIREBUSD Price
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="item-faq">
+                                        <div class="header-item-faq">
+                                            <button type="button" class="close-faq-item"></button>
+                                            <h3 class="title-faq-item">
+                                                How does the token value increase?
+                                            </h3>
+                                        </div>
+                                        <div class="container-info-faq">
+                                            <p>
+                                                The value of the token increases with the investments in busd in the platform, and with the increase of tokens inserted in staking
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="item-faq">
+                                        <div class="header-item-faq">
+                                            <button type="button" class="close-faq-item"></button>
+                                            <h3 class="title-faq-item">
+                                                How does the stake work?
+                                            </h3>
+                                        </div>
+                                        <div class="container-info-faq">
+                                            <p>
+                                                If you invest 100 BUSD you will receive 2 FIREBUSD per day 2. You have two options with your FIREBUSD tokens, you can sell them for BUSD, or you can stake them to earn more FIREBUSD tokens (4% per day). FIREBUSD staking is locked for 7 days
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="item-faq">
+                                        <div class="header-item-faq">
+                                            <button type="button" class="close-faq-item"></button>
+                                            <h3 class="title-faq-item">
+                                                Can I make multiple deposits? 
+                                            </h3>
+                                        </div>
+                                        <div class="container-info-faq">
+                                            <p>
+                                                Absolutely! There is no limit to the number of your deposits.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="item-faq">
+                                        <div class="header-item-faq">
+                                            <button type="button" class="close-faq-item"></button>
+                                            <h3 class="title-faq-item">
+                                                Do you have a referral program?
+                                            </h3>
+                                        </div>
+                                        <div class="container-info-faq">
+                                            <p>
+                                                Yes, our referral program features 3 levels of referral rewards. For the friends that you invite, you receive a % of their deposits. Check the percentages for each level on our website. 
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="item-faq">
+                                        <div class="header-item-faq">
+                                            <button type="button" class="close-faq-item"></button>
+                                            <h3 class="title-faq-item">
+                                                Where can I follow the latest news?
+                                            </h3>
+                                        </div>
+                                        <div class="container-info-faq">
+                                            <p>
+                                                Follow our social media channels where we publish all the latest updates.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fine FAQ -->
+
+        </div>
+
+        <!-- back-to-top -->
+        <div id="back-to-top">
+            <a class="top" id="top" href="index-2.html#top"><i class="fa fa-angle-double-up" aria-hidden="true"></i> </a>
+        </div>
+        <!-- back-to-top End -->
+        
+        <!-- bubbly -->
+        <canvas id="canvas1"></canvas>
+        <!-- bubbly End -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/plugins/jquery-min.js"></script>
+        <script src="js/plugins/jquery.numeric.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="js/plugins/bootstrap.min.js"></script>
+        <!-- All-plugins JavaScript -->
+        <script src="js/plugins/all-plugins.js"></script>
+        <!-- timeline JavaScript -->
+        <script src="js/plugins/timeline.min.js"></script>
+        <!-- wave JavaScript -->
+        <script src='js/plugins/wave/three.min.js'></script>
+        <script src='js/plugins/wave/Projector.js'></script>
+        <script src='js/plugins/wave/CanvasRenderer.js'></script>
+        <script src="js/plugins/wave/index.js"></script>
+        <!-- bubbly JavaScript -->
+        <script src="js/plugins/bubbly-bg.js"></script>
+        <!-- Custom JavaScript -->
+        <script src="js/custom.js"></script>
+        <script type="text/javascript" src="../unpkg.com/web3%401.7.0/dist/web3.min.js"></script>
+        <script type="text/javascript" src="../unpkg.com/web3modal%401.9.5/dist/index.js"></script>
+        <script type="text/javascript" src="../unpkg.com/%40walletconnect/web3-provider%401.7.1/dist/umd/index.min.js"></script>
+        <script src="js/index_202201082031.js"></script>
+
+    </body>
+
+
+</html>
