@@ -155,7 +155,7 @@ function App() {
   const [availableSupply, setAvailableSupply] = useState("0.0000");
   const [connectedAddress, setConnectedAddress] = useState("");
   const [bscBalance, setBscBalance] = useState("0.0000");
-  const [ointTokenBalance, setbuddytokenBalance] = useState("0.0000");
+  const [buddyTokenBalance, setbuddytokenBalance] = useState("0.0000");
 
   const [bscApprovedAmount, setBscApprovedAmount] = useState("0.00");
   const [bscStakeText, setBscStateText] = useState("0");
@@ -183,12 +183,20 @@ function App() {
   const [buddyToSell, setbuddyToSell] = useState("0");
 
   const [contractBUSDBalance, setContractBUSDBalance] = useState("0");
-
+  const [totalUsers, setTotalUsers] = useState("0");
   const [userTokenBalance, setUserTokenBalance] = useState("0");
 
   const [referralWithdrawn, setReferralWithdraw] = useState("0");
   const [referralTotalBonus, setReferralTotalBonus] = useState("0");
   const [referralBonus, setReferralBonus] = useState("0");
+  const [totalReferral, setTotalReferrals] = useState("0");
+
+  const [referralAddress, setReferralAddress] = useState(null);
+  const [apyMinted, setApyMinted] = useState("0");
+  const [apyStaked, setApyStaked] = useState("0");
+  const [availableForAirDrop, setAvailableForAirDrop] = useState("0");
+
+  const [timeToNextAirDrop, setTimeToNextAirDrop] = useState("0");
 
   async function loadDetails() {
     //const provider = new ethers.providers.JsonRpcProvider(url);
@@ -218,6 +226,12 @@ function App() {
       referralWithdrawn,
       referralTotalBonus,
       referralBonus,
+      totalUsers,
+      totalReferral,
+      apyMinted,
+      apyStaked,
+      availableForAirDrop,
+      timeToNextAirDrop,
     ] = await Promise.all([
       bscContract.balanceOf(address),
       bscContract.balanceOf(address),
@@ -236,10 +250,15 @@ function App() {
       contract.getTokenAvailableToSell(),
       contract.getTimeToNextDay(),
       contract.getContractBUSDBalance(),
-
       contract.getUserReferralWithdrawn(address),
       contract.getUserReferralTotalBonus(address),
       contract.getUserReferralBonus(address),
+      contract.totalUsers(),
+      contract.getUserDownlineCount(address),
+      contract.getAPY_M(),
+      contract.getAPY_M(),
+      contract.getUserBonAirdrop(address),
+      contract.getUserTimeToNextAirdrop(address),
     ]);
 
     //parse the values here
@@ -288,12 +307,20 @@ function App() {
     referralBonus = parseFloat(ethers.utils.formatEther(referralBonus)).toFixed(
       2
     );
+    availableForAirDrop = parseFloat(
+      ethers.utils.formatEther(availableForAirDrop)
+    ).toFixed(2);
 
     getTimeToNextDay = getTimeToNextDay.toString();
+    totalUsers = totalUsers.toString();
 
     contractBUSDBalance = parseFloat(
       ethers.utils.formatEther(contractBUSDBalance)
     ).toFixed(2);
+    apyMinted = apyMinted.toString();
+    apyStaked = apyStaked.toString();
+
+    timeToNextAirDrop = timeToNextAirDrop.toString();
 
     let tokenCorrectedDecimal = parseFloat(tokenPrice);
 
@@ -317,6 +344,12 @@ function App() {
     setReferralWithdraw(referralWithdrawn);
     setReferralTotalBonus(referralTotalBonus);
     setReferralBonus(referralBonus);
+    setTotalUsers(totalUsers);
+    setTotalReferrals(totalReferral.toString());
+    setApyMinted(apyMinted);
+    setApyStaked(apyStaked);
+    setAvailableForAirDrop(availableForAirDrop);
+    setTimeToNextAirDrop(timeToNextAirDrop);
   }
 
   useEffect(() => {
@@ -324,6 +357,14 @@ function App() {
       loadDetails();
     }
   }, [web3Provider]);
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const referral = queryParams.get("ref");
+    if (referral) {
+      setReferralAddress(referral);
+    }
+  }, []);
 
   return (
     <div className="App">
@@ -335,29 +376,65 @@ function App() {
         address={address}
       />
 
-      <div id="wave" class="iq-banner">
-        <div class="row banner-info Mcontainer mydiv">
-          <Price />
+      <div id="wave" className="iq-banner">
+        <div className="row banner-info Mcontainer mydiv">
+          <Price tokenPrice={tokenPrice} totalUsers={totalUsers} />
           <Mint
             account={account}
             contractAddress={contractAddress}
             userBscStaked={userBscStaked}
             contractBUSDBalance={contractBUSDBalance}
-            userUnclaimTokenMinting={userUnclaimTokenMinting}
+            userUnclaimTokenStake={userUnclaimedToken}
             bscBalance={bscBalance}
+            referralAddress={referralAddress}
+            apyMinted={apyMinted}
           />
-          <Stake />
-          <SellStake />
+          <Stake
+            mybuddyStake={mybuddyStake}
+            account={account}
+            totalStakedToken={totalStakedToken}
+            userUnclaimTokenMinting={userUnclaimTokenMinting}
+            contractAddress={contractAddress}
+            userTokenBalance={userTokenBalance}
+            apyStaked={apyStaked}
+          />
+          <SellStake
+            account={account}
+            contractAddress={contractAddress}
+            circulatingSupply={circulatingSupply}
+            availableSupply={availableSupply}
+            getTimeToNextDay={getTimeToNextDay}
+            tokenPrice={tokenPrice}
+            buddyTokenBalance={buddyTokenBalance}
+            totalAvailableToSell={totalAvailableToSell}
+          />
         </div>
       </div>
 
       <div className="main-contain">
         <div className="row Mcontainer">
-          <Referral />
-          <AirDrop />
+          <Referral
+            account={account}
+            contractAddress={contractAddress}
+            referralWithdrawn={referralWithdrawn}
+            referralTotalBonus={referralTotalBonus}
+            referralBonus={referralBonus}
+            totalReferral={totalReferral}
+          />
+          <AirDrop
+            account={account}
+            contractAddress={contractAddress}
+            availableForAirDrop={availableForAirDrop}
+            userBscStaked={userBscStaked}
+            totalReferral={totalReferral}
+            timeToNextAirDrop={timeToNextAirDrop}
+          />
         </div>
       </div>
-      <Tokenomics />
+      <Tokenomics
+        circulatingSupply={circulatingSupply}
+        availableSupply={availableSupply}
+      />
     </div>
   );
 }

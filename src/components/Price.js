@@ -1,14 +1,14 @@
 import React from "react";
 
-const Price = () => {
+const Price = ({tokenPrice, totalUsers}) => {
   return (
     <React.Fragment>
       <div className="col-lg-6 col-md-12 col-sm-12 text-center">
         <h6>
           <b>
-            FIREBUSD PRICE :{" "}
-            <span id="token-priceM">
-              <b>0.00</b>
+            BUDDYMINT PRICE :
+            <span id="token-priceM"> &nbsp;&nbsp;
+              <b>{tokenPrice ? tokenPrice : "0.00"}</b>
             </span>
           </b>
         </h6>
@@ -16,9 +16,9 @@ const Price = () => {
       <div className="col-lg-6 col-md-12 col-sm-12 text-center">
         <h6>
           <b>
-            TOTAL USER :{" "}
-            <span id="totalUsers">
-              <b>0.00</b>
+            TOTAL USER :
+            <span id="totalUsers"> &nbsp;&nbsp;
+              <b>{totalUsers}</b>
             </span>
           </b>
         </h6>

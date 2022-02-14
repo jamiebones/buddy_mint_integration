@@ -1,6 +1,6 @@
 import React from "react";
 
-const Tokenomics = () => {
+const Tokenomics = ({ circulatingSupply, availableSupply }) => {
   return (
     <React.Fragment>
       <section
@@ -49,20 +49,20 @@ const Tokenomics = () => {
                     </tr>
                     <tr>
                       <td>Circulation Supply:</td>
-                      <td className="total-supply">...</td>
+                      <td className="total-supply">{circulatingSupply}</td>
                     </tr>
                     <tr>
                       <td>Available Supply:</td>
-                      <td className="available-supply">...</td>
+                      <td className="available-supply">{availableSupply}</td>
                     </tr>
                     <tr>
                       <td>Contract:</td>
                       <td>
                         <a
-                          href="https://bscscan.com/address/0x08aF0ecc3B8194809730bA7013C637c7e16D2f9c"
+                          href="https://bscscan.com/address/0x8225E12bBff24B6Cc85c3D3F05B81135D750EAa0"
                           target="_blank"
                         >
-                          0x08aF0ecc3B8194809730bA7013C637c7e16D2f9c
+                          0x8225E12bBff24B6Cc85c3D3F05B81135D750EAa0
                         </a>
                       </td>
                     </tr>

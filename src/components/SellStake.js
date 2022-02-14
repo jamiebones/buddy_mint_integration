@@ -1,6 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
+import { ethers } from "ethers";
 
-const SellStake = () => {
+import ABI from "../utils/abi.json";
+
+const dateConverter = (secs) => {
+  var sec_num = parseInt(secs, 10);
+  var hours = Math.floor(sec_num / 3600);
+  var minutes = Math.floor(sec_num / 60) % 60;
+  var seconds = sec_num % 60;
+
+  return [hours, minutes, seconds]
+    .map((v) => (v < 10 ? "0" + v : v))
+    .filter((v, i) => v !== "00" || i > 0)
+    .join(":");
+
+  //const dateSplit = result.split(":");
+  //return `${dateSplit[0]}D:${dateSplit[1]}H:${dateSplit[2]}M`
+};
+
+const SellStake = ({
+  account: { web3Provider, signer, address },
+  contractAddress,
+  circulatingSupply,
+  availableSupply,
+  getTimeToNextDay,
+  tokenPrice,
+  buddyTokenBalance,
+  totalAvailableToSell,
+}) => {
+  const [tokenToSell, setTokenToSell] = useState("1");
+
+  const handleTokenToSell = (e) => {
+    const value = e.target.value;
+    setTokenToSell(value);
+  };
+
+  const sellBuddyToken = async () => {
+    const contract = new ethers.Contract(contractAddress, ABI, web3Provider);
+    try {
+      await contract
+        .connect(signer)
+        .sellToken(ethers.utils.parseEther(tokenToSell));
+      alert("Token sold");
+    } catch (error) {
+      alert(`There was an error please try again. ${error.data.message}`);
+    }
+  };
+
   return (
     <React.Fragment>
       <div className="col-lg-4 col-md-12 col-sm-12 text-center">
@@ -13,11 +59,11 @@ const SellStake = () => {
           <hr />
           <div className="row">
             <div className="col-6 my-2">
-              <b>Circulation</b>
+              <b>Total supply</b>
             </div>
             <div className="col-6 my-2 total-supply">
               <span>
-                <b></b>
+                <b>{circulatingSupply}</b>
               </span>
             </div>
           </div>
@@ -28,7 +74,18 @@ const SellStake = () => {
             </div>
             <div className="col-6 my-2 available-supply">
               <span>
-                <b>...</b>
+                <b>{availableSupply}</b>
+              </span>
+            </div>
+          </div>
+          <hr />
+          <div className="row">
+            <div className="col-6 my-2">
+              <b>Available for sale</b>
+            </div>
+            <div className="col-6 my-2 available-supply">
+              <span>
+                <b>{totalAvailableToSell}</b>
               </span>
             </div>
           </div>
@@ -39,7 +96,7 @@ const SellStake = () => {
             </div>
             <div className="col-6 my-2" id="time-tonextday">
               <span>
-                <b>...</b>
+                <b>{dateConverter(getTimeToNextDay)}</b>
               </span>
             </div>
           </div>
@@ -51,7 +108,7 @@ const SellStake = () => {
             <div className="col-12">
               <h5>
                 <span id="token-price">
-                  <b>...</b>
+                  <b>{tokenPrice}</b>
                 </span>
               </h5>
             </div>
@@ -72,19 +129,18 @@ const SellStake = () => {
           <hr className="my-4" />
           <div className="row d-flex justify-content-center">
             <h5 className="my-3">
-              BUDDYMINT Balance:
+              BUDDYMINT Balance: &nbsp;&nbsp;
               <b>
-                {" "}
                 <span id="user-token-balance-2">
-                  <b>...</b>
+                  <b>{buddyTokenBalance}</b>
                 </span>
               </b>
             </h5>
+
             <div className="col-12">
               <hr className="my-4" />
             </div>
             <div className="mb-4">
-              <p>Available for sale</p>
               <div className="row">
                 <div className="col-7">
                   <div className="deposit-block">
@@ -92,16 +148,12 @@ const SellStake = () => {
                       <input
                         type="number"
                         className="amount-input"
-                        value="1"
+                        value={tokenToSell}
                         min="0"
                         id="input-3"
+                        onChange={handleTokenToSell}
                       />
-                      <button
-                        className="amount-field-button"
-                        onclick="SetMaxBUSDTokenToSell()"
-                      >
-                        Max
-                      </button>
+                      <button className="amount-field-button">Max</button>
                     </div>
                   </div>
                 </div>
@@ -110,7 +162,7 @@ const SellStake = () => {
                     type="button"
                     className="btnprimary"
                     id="sellButton"
-                    onclick="sell('#input-3')"
+                    onClick={sellBuddyToken}
                   >
                     Sell
                   </button>

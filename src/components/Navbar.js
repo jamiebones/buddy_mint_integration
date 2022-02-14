@@ -57,18 +57,7 @@ const Navbar = ({ connect, disconnect, provider, web3Provider, address }) => {
                   <span>SmartContract</span>
                 </button>
               </li>
-              <li className="nav-item btnHeader">
-                <a href="assets/HazeSecurity_FireBusd.pdf" target="_blank">
-                  <button
-                    style={{ cursor: "pointer" }}
-                    type="button"
-                    title="Audit"
-                    className="btnprimary tel"
-                  >
-                    <span>Audit</span>
-                  </button>
-                </a>
-              </li>
+            
               <li className="nav-item btnHeader marginL">
                 <button
                   style={{ cursor: "pointer" }}

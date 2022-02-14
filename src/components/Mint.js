@@ -9,12 +9,14 @@ const Mint = ({
   contractAddress,
   userBscStaked,
   contractBUSDBalance,
-  userUnclaimTokenMinting,
+  userUnclaimTokenStake,
   bscBalance,
+  referralAddress,
+  apyMinted
 }) => {
   const bscAddress = "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
   const [minimumBusd, setMinimumBusd] = useState("30");
-  const [amountToInvest, setAmountToInvest ] = useState("30");
+  const [amountToInvest, setAmountToInvest] = useState("30");
   const addressZero = "0x0000000000000000000000000000000000000000";
 
   const handleAmountToInvest = (e) => {
@@ -23,7 +25,7 @@ const Mint = ({
       setAmountToInvest(30);
     }
     setAmountToInvest(value);
-  }
+  };
 
   const handleMinimumValue = (e) => {
     const value = e.target.value;
@@ -66,20 +68,28 @@ const Mint = ({
   };
 
   const stakeBUSDToInvest = async () => {
-    if ( amountToInvest < "30"){
+    if (amountToInvest < "30") {
       alert("The minimum stake of BUSD is 30 $BUSD");
       return;
     }
-    const contract = new ethers.Contract(contractAddress, ABI, web3Provider );
+    const contract = new ethers.Contract(contractAddress, ABI, web3Provider);
     try {
-      await contract.connect(signer).stakeBUSD(addressZero, ethers.utils.parseEther(amountToInvest));
+      let refferal;
+      if (referralAddress) {
+        refferal = referralAddress;
+      } else {
+        refferal = addressZero;
+      }
+      await contract
+        .connect(signer)
+        .stakeBUSD(refferal, ethers.utils.parseEther(amountToInvest));
       alert("BSC token staked");
     } catch (error) {
-    
-      alert(`There was an error please try again. ${error.message}`)
+      alert(`There was an error please try again. ${error.message}`);
     }
-   
-   }
+  };
+
+
   
 
   return (
@@ -98,7 +108,7 @@ const Mint = ({
             </div>
             <div className="col-6 my-2" id="APY_M">
               <span>
-                <b></b>
+                <b>{apyMinted}%</b>
               </span>
             </div>
           </div>
@@ -135,7 +145,7 @@ const Mint = ({
               <h5>
                 <span id="user-unClaimed-M">
                   <b>
-                    {userUnclaimTokenMinting ? userUnclaimTokenMinting : "..."}
+                    {userUnclaimTokenStake ? userUnclaimTokenStake : "..."}
                   </b>
                 </span>
               </h5>
@@ -157,7 +167,6 @@ const Mint = ({
             <h5 className="mb-3 mt-2">
               <b>BUSD</b> Balance:
               <b>
-                {" "}
                 <span id="user-BUSD-balance-1">
                   <b>{bscBalance ? `${bscBalance}` : "..."}</b>
                 </span>
@@ -179,7 +188,7 @@ const Mint = ({
                 />
                 <button
                   className="amount-field-button"
-                  onClick={()=>setMinimumBusd(bscBalance)}
+                  onClick={() => setMinimumBusd(bscBalance)}
                 >
                   Max
                 </button>
