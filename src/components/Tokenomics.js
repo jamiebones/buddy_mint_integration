@@ -1,6 +1,6 @@
 import React from "react";
 
-const Tokenomics = ({ circulatingSupply, availableSupply }) => {
+const Tokenomics = ({ circulatingSupply, availableSupply, totalSupply }) => {
   return (
     <React.Fragment>
       <section
@@ -14,7 +14,7 @@ const Tokenomics = ({ circulatingSupply, availableSupply }) => {
                 <h2 className="title iq-tw-6">Tokenomics</h2>
                 <p>
                   {" "}
-                  Use BUSD to earn BUDDYMINT Tokens to stake (or sell for BUSD)
+                  Use BUSD to earn BDMT TOKEN to stake (or sell for BUSD)
                 </p>
               </div>
             </div>
@@ -29,11 +29,11 @@ const Tokenomics = ({ circulatingSupply, availableSupply }) => {
                   <tbody>
                     <tr>
                       <td>Token Name:</td>
-                      <td>BUDDYMINT</td>
+                      <td>BDMT TOKEN</td>
                     </tr>
                     <tr>
-                      <td>Token Symbole:</td>
-                      <td>BUDDYMINT</td>
+                      <td>Token Symbol:</td>
+                      <td>BDMT TOKEN</td>
                     </tr>
                     <tr>
                       <td>Network:</td>
@@ -49,7 +49,7 @@ const Tokenomics = ({ circulatingSupply, availableSupply }) => {
                     </tr>
                     <tr>
                       <td>Circulation Supply:</td>
-                      <td className="total-supply">{circulatingSupply}</td>
+                      <td className="total-supply">{totalSupply}</td>
                     </tr>
                     <tr>
                       <td>Available Supply:</td>

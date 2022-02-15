@@ -15,7 +15,7 @@ const Navbar = ({ connect, disconnect, provider, web3Provider, address }) => {
           <a href="index-2.html#">
             <div className="logo">
               <img
-                src="assets/images/firebusd-logo-header-transparent.png"
+                src="assets/images/logo2.jpeg"
                 style={{ width: 200 + "px", height: 212 + "px" }}
                 alt="logo"
               />
@@ -35,14 +35,14 @@ const Navbar = ({ connect, disconnect, provider, web3Provider, address }) => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto text-center navMI">
               <li className="nav-item active btnHeader">
-                <a href="assets/WhitePaper.pdf" target="_blank">
+                <a href="https://buddymint.net/" target="_blank">
                   <button
                     style={{ cursor: "pointer" }}
                     type="button"
                     title="Whitepaper"
                     className="btnprimary"
                   >
-                    <span>WhitePaper</span>
+                    <span>Main Site</span>
                   </button>
                 </a>
               </li>

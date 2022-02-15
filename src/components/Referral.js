@@ -52,7 +52,7 @@ const Referral = ({
             />
             <button
               className="btn-copy"
-              onClick={() => copyURL(`${window.location.host}?ref=${address}`)}
+              onClick={() => copyURL(`https://${window.location.host}?ref=${address}`)}
             >
               <img src={copyImage} />
             </button>
@@ -103,11 +103,11 @@ const Referral = ({
               <b>
                 <h5 className="mb-3">Earn BUSD for promotion:</h5>
               </b>
-              <b>2% from each level 1 referral deposits</b>
+              <b>4% from each level 1 referral deposits</b>
               <br />
-              <b>1% from each level 2 referral deposits</b>
+              <b>3% from each level 2 referral deposits</b>
               <br />
-              <b>1% from each level 3 referral deposits</b>
+              <b>2% from each level 3 referral deposits</b>
             </div>
           </div>
         </div>

@@ -27,6 +27,7 @@ const SellStake = ({
   tokenPrice,
   buddyTokenBalance,
   totalAvailableToSell,
+  totalSupply
 }) => {
   const [tokenToSell, setTokenToSell] = useState("1");
 
@@ -50,7 +51,7 @@ const SellStake = ({
   return (
     <React.Fragment>
       <div className="col-lg-4 col-md-12 col-sm-12 text-center">
-        <h3 className="title-header mt-2">SELL BUDDYMINT</h3>
+        <h3 className="title-header mt-2">SELL BDMT TOKEN</h3>
         <div className="mycontainer2 mt-1">
           <p>
             Sell the earned tokens <br /> Only 40000 tokens can be sold per day
@@ -59,11 +60,11 @@ const SellStake = ({
           <hr />
           <div className="row">
             <div className="col-6 my-2">
-              <b>Total supply</b>
+              <b>Circulation supply</b>
             </div>
             <div className="col-6 my-2 total-supply">
               <span>
-                <b>{circulatingSupply}</b>
+                <b>{totalSupply}</b>
               </span>
             </div>
           </div>
@@ -103,7 +104,7 @@ const SellStake = ({
           <hr />
           <div className="row my-4">
             <div className="col-12">
-              <h5 className="mb-2">BUDDYMINT Price</h5>
+              <h5 className="mb-2">BDMT TOKEN Price</h5>
             </div>
             <div className="col-12">
               <h5>
@@ -129,7 +130,7 @@ const SellStake = ({
           <hr className="my-4" />
           <div className="row d-flex justify-content-center">
             <h5 className="my-3">
-              BUDDYMINT Balance: &nbsp;&nbsp;
+              BDMT TOKEN Balance: &nbsp;&nbsp;
               <b>
                 <span id="user-token-balance-2">
                   <b>{buddyTokenBalance}</b>

@@ -7,10 +7,10 @@ const Stake = ({
   account: { web3Provider, signer, address },
   mybuddyStake,
   totalStakedToken,
-  userUnclaimTokenMinting,
+  userUnclaimTokenStake,
   contractAddress,
   userTokenBalance,
-  apyStaked
+  apyStaked,
 }) => {
   const addressZero = "0x0000000000000000000000000000000000000000";
   const [amountToStake, setAmountToStake] = useState("1");
@@ -51,11 +51,11 @@ const Stake = ({
   return (
     <React.Fragment>
       <div className="col-lg-4 col-md-12 col-sm-12 text-center">
-        <h3 className="title-header mt-2">STAKE BUDDYMINT</h3>
+        <h3 className="title-header mt-2">STAKE BDMT TOKEN</h3>
         <div className="mycontainer2 mt-1">
           <p>
-            Stake BUDDYMINT to earn it You can stake as many times as you want
-            You can unstake this BUDDYMINT after 7 days
+            Stake BDMT TOKEN to earn it You can stake as many times as you want
+            You can unstake this BDMT TOKEN after 7 days
           </p>
           <hr />
           <div className="row">
@@ -93,14 +93,12 @@ const Stake = ({
           <hr />
           <div className="row my-3">
             <div className="col-12">
-              <h5 className="mb-2">BUDDYMINT Earned</h5>
+              <h5 className="mb-2">BDMT TOKEN Earned</h5>
             </div>
             <div className="col-12">
               <h5>
                 <span id="user-unClaimed-T">
-                  <b>
-                    {userUnclaimTokenMinting ? userUnclaimTokenMinting : "..."}
-                  </b>
+                  <b>{userUnclaimTokenStake ? userUnclaimTokenStake : "..."}</b>
                 </span>
               </h5>
             </div>
@@ -139,7 +137,7 @@ const Stake = ({
           <hr className="my-4" />
           <div className="row d-flex justify-content-center">
             <h5 className="my-1">
-              BUDDYMINT Balance:
+              BDMT TOKEN Balance:
               <b>
                 <span id="user-token-balance-1">
                   &nbsp;&nbsp;

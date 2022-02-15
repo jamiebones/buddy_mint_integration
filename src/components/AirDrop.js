@@ -32,7 +32,7 @@ const AirDrop = ({
         <h2 className="title-header">AIRDROP</h2>
         <div className="mycontainer3 mt-2">
           Complete the challenges to get airdrop
-          <br /> You can receive 100 BUDDYMINT every 7 days
+          <br /> You can receive 100 BDMT TOKEN every 7 days
           <hr className="my-3" />
           <div className="row">
             <div className="col-lg-4" id="airdrop-c-1">

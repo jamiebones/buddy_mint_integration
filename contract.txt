@@ -171,7 +171,7 @@ contract Token is ERC20 {
     mapping (address => bool) private _contracts;
 
     constructor() public {
-        _name = "BuddyMint";
+        _name = "BDMT TOKEN";
         _symbol = "BDMT";
         _decimals = 18;
         _limitSupply = 1000000e18;
@@ -197,7 +197,7 @@ contract Token is ERC20 {
     }
 }
 
-contract BuddyMint is Token {
+contract BDMT TOKEN is Token {
     
     uint private startTime = 1111; 
     

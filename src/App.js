@@ -256,67 +256,69 @@ function App() {
       contract.totalUsers(),
       contract.getUserDownlineCount(address),
       contract.getAPY_M(),
-      contract.getAPY_M(),
+      contract.getAPY_T(),
       contract.getUserBonAirdrop(address),
       contract.getUserTimeToNextAirdrop(address),
     ]);
 
+    
+
     //parse the values here
     buddybalance = parseFloat(ethers.utils.formatEther(buddybalance)).toFixed(
-      2
+      8
     );
-    bscBalance = parseFloat(ethers.utils.formatEther(bscBalance)).toFixed(2);
-    total = parseFloat(ethers.utils.formatEther(total)).toFixed(2);
+    bscBalance = parseFloat(ethers.utils.formatEther(bscBalance)).toFixed(8);
+    total = parseFloat(ethers.utils.formatEther(total)).toFixed(8);
     availableSupply = parseFloat(
       ethers.utils.formatEther(availableSupply)
-    ).toFixed(2);
-    supply = parseFloat(ethers.utils.formatEther(supply)).toFixed(2);
+    ).toFixed(8);
+    supply = parseFloat(ethers.utils.formatEther(supply)).toFixed(8);
     mybuddyStake = parseFloat(ethers.utils.formatEther(mybuddyStake)).toFixed(
-      2
+      8
     );
-    userBscBal = parseFloat(ethers.utils.formatEther(userBscBal)).toFixed(2);
+    userBscBal = parseFloat(ethers.utils.formatEther(userBscBal)).toFixed(8);
     userBscStaked = parseFloat(ethers.utils.formatEther(userBscStaked)).toFixed(
-      2
+      8
     );
     userTokenBalance = parseFloat(
       ethers.utils.formatEther(userTokenBalance)
-    ).toFixed(2);
+    ).toFixed(8);
     tokenPrice = ethers.utils.formatUnits(tokenPrice, "18");
     totalStakedToken = parseFloat(
       ethers.utils.formatEther(totalStakedToken)
-    ).toFixed(2);
+    ).toFixed(8);
     userUnclaimedToken = parseFloat(
       ethers.utils.formatEther(userUnclaimedToken)
-    ).toFixed(2);
+    ).toFixed(8);
     userUnclaimTokenMinting = parseFloat(
       ethers.utils.formatEther(userUnclaimTokenMinting)
-    ).toFixed(2);
+    ).toFixed(8);
     totalSoldToday = parseFloat(
       ethers.utils.formatEther(totalSoldToday)
-    ).toFixed(2);
+    ).toFixed(8);
     totalAvailableToSell = parseFloat(
       ethers.utils.formatEther(totalAvailableToSell)
-    ).toFixed(2);
+    ).toFixed(8);
 
     referralWithdrawn = parseFloat(
       ethers.utils.formatEther(referralWithdrawn)
-    ).toFixed(2);
+    ).toFixed(8);
     referralTotalBonus = parseFloat(
       ethers.utils.formatEther(referralTotalBonus)
-    ).toFixed(2);
+    ).toFixed(8);
     referralBonus = parseFloat(ethers.utils.formatEther(referralBonus)).toFixed(
-      2
+      8
     );
     availableForAirDrop = parseFloat(
       ethers.utils.formatEther(availableForAirDrop)
-    ).toFixed(2);
+    ).toFixed(8);
 
     getTimeToNextDay = getTimeToNextDay.toString();
     totalUsers = totalUsers.toString();
 
     contractBUSDBalance = parseFloat(
       ethers.utils.formatEther(contractBUSDBalance)
-    ).toFixed(2);
+    ).toFixed(8);
     apyMinted = apyMinted.toString();
     apyStaked = apyStaked.toString();
 
@@ -384,7 +386,7 @@ function App() {
             contractAddress={contractAddress}
             userBscStaked={userBscStaked}
             contractBUSDBalance={contractBUSDBalance}
-            userUnclaimTokenStake={userUnclaimedToken}
+            userUnclaimTokenMinting={userUnclaimTokenMinting}
             bscBalance={bscBalance}
             referralAddress={referralAddress}
             apyMinted={apyMinted}
@@ -393,7 +395,7 @@ function App() {
             mybuddyStake={mybuddyStake}
             account={account}
             totalStakedToken={totalStakedToken}
-            userUnclaimTokenMinting={userUnclaimTokenMinting}
+            userUnclaimTokenStake={userUnclaimedToken}
             contractAddress={contractAddress}
             userTokenBalance={userTokenBalance}
             apyStaked={apyStaked}
@@ -407,6 +409,7 @@ function App() {
             tokenPrice={tokenPrice}
             buddyTokenBalance={buddyTokenBalance}
             totalAvailableToSell={totalAvailableToSell}
+            totalSupply={totalSupply}
           />
         </div>
       </div>
@@ -420,6 +423,7 @@ function App() {
             referralTotalBonus={referralTotalBonus}
             referralBonus={referralBonus}
             totalReferral={totalReferral}
+            
           />
           <AirDrop
             account={account}
@@ -434,6 +438,7 @@ function App() {
       <Tokenomics
         circulatingSupply={circulatingSupply}
         availableSupply={availableSupply}
+        totalSupply={totalSupply}
       />
     </div>
   );

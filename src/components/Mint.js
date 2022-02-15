@@ -9,14 +9,14 @@ const Mint = ({
   contractAddress,
   userBscStaked,
   contractBUSDBalance,
-  userUnclaimTokenStake,
+  userUnclaimTokenMinting,
   bscBalance,
   referralAddress,
-  apyMinted
+  apyMinted,
 }) => {
   const bscAddress = "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
-  const [minimumBusd, setMinimumBusd] = useState("30");
-  const [amountToInvest, setAmountToInvest] = useState("30");
+  const [minimumBusd, setMinimumBusd] = useState("5");
+  const [amountToInvest, setAmountToInvest] = useState("5");
   const addressZero = "0x0000000000000000000000000000000000000000";
 
   const handleAmountToInvest = (e) => {
@@ -60,7 +60,7 @@ const Mint = ({
         .connect(signer)
         .approve(contractAddress, ethers.utils.parseEther(minimumBusd));
       alert(
-        `Approval granted to BuddyMint contract to spend funds on behalf of ${address}`
+        `Approval granted to BDMT TOKEN contract to spend funds on behalf of ${address}`
       );
     } catch (error) {
       alert(`Error: ${error.message}`);
@@ -68,8 +68,8 @@ const Mint = ({
   };
 
   const stakeBUSDToInvest = async () => {
-    if (amountToInvest < "30") {
-      alert("The minimum stake of BUSD is 30 $BUSD");
+    if (amountToInvest < "5") {
+      alert("The minimum stake of BUSD is 5 $BUSD");
       return;
     }
     const contract = new ethers.Contract(contractAddress, ABI, web3Provider);
@@ -89,16 +89,13 @@ const Mint = ({
     }
   };
 
-
-  
-
   return (
     <React.Fragment>
       <div className="col-lg-4 col-md-12 col-sm-12 text-center mint">
-        <h3 className="title-header mt-2">MINT BUDDYMINT</h3>
+        <h3 className="title-header mt-2">MINT BDMT TOKEN</h3>
         <div className="mycontainer2 mt-1">
           <p>
-            Mint BUDDYMINT by staking your BUSD You can stake as many times as
+            Mint BDMT TOKEN by staking your BUSD You can stake as many times as
             you want You cannot unstake this BUSD
           </p>
           <hr />
@@ -139,13 +136,13 @@ const Mint = ({
           <hr />
           <div className="row my-3">
             <div className="col-12">
-              <h5 className="mb-2">BUDDYMINT Earned</h5>
+              <h5 className="mb-2">BDMT TOKEN Earned</h5>
             </div>
             <div className="col-12">
               <h5>
                 <span id="user-unClaimed-M">
                   <b>
-                    {userUnclaimTokenStake ? userUnclaimTokenStake : "..."}
+                    {userUnclaimTokenMinting ? userUnclaimTokenMinting : "..."}
                   </b>
                 </span>
               </h5>
@@ -175,13 +172,18 @@ const Mint = ({
             <div className="col-12">
               <hr className="my-2" />
             </div>
-            <p id="minInvest"> Minimum deposit 30 BUSD</p>
+
+            <div className="col-12">
+              <p id="minInvest"> Minimum deposit 5 BUSD</p> 
+            </div>
+           
+         
             <div className="col-7">
               <div className="amount-field">
                 <input
                   type="number"
                   className="amount-input"
-                  min="30"
+                  min="5"
                   id="input-approve"
                   value={minimumBusd}
                   onChange={handleMinimumValue}
@@ -213,7 +215,7 @@ const Mint = ({
                     type="number"
                     className="amount-input"
                     value={amountToInvest}
-                    min="30"
+                    min="5"
                     id="input-busd"
                     onChange={handleAmountToInvest}
                   />
