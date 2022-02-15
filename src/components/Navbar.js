@@ -15,8 +15,8 @@ const Navbar = ({ connect, disconnect, provider, web3Provider, address }) => {
           <a href="index-2.html#">
             <div className="logo">
               <img
-                src="assets/images/logo2.jpeg"
-                style={{ width: 200 + "px", height: 212 + "px" }}
+                src="assets/images/logo3.png"
+                style={{ width: 200 + "px", height: 212 + "px", background: "transparent" }}
                 alt="logo"
               />
             </div>

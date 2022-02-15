@@ -31,7 +31,7 @@ body {
   line-height: 26px;
   color: #e3e3e3;
   overflow-x: hidden;
-  background: #000;
+  background: #16181c;
 }
 a:hover,
 a:focus,
@@ -2294,7 +2294,6 @@ input {
   display: none;
   transition: 0.3s;
 }
-
 
 .active-faq {
   display: block;

@@ -29,11 +29,11 @@ const Tokenomics = ({ circulatingSupply, availableSupply, totalSupply }) => {
                   <tbody>
                     <tr>
                       <td>Token Name:</td>
-                      <td>BDMT TOKEN</td>
+                      <td>BUDDYMINT</td>
                     </tr>
                     <tr>
                       <td>Token Symbol:</td>
-                      <td>BDMT TOKEN</td>
+                      <td>BDMT</td>
                     </tr>
                     <tr>
                       <td>Network:</td>
