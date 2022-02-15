@@ -38,7 +38,7 @@ const AirDrop = ({
             <div className="col-lg-4" id="airdrop-c-1">
               Have at least <b>100</b> BUSD in Stake
               <span>
-                <br /> {userBscStaked > 100 ? "&#9989;" : "❌"}
+                <br /> {userBscStaked > 100 ? <>&#9989;</> : "❌"}
               </span>
             </div>
             <div className="col-lg-4" id="airdrop-c-2">
@@ -50,7 +50,8 @@ const AirDrop = ({
             <div className="col-lg-4" id="airdrop-c-3">
               Have 5 <br /> more referrals
               <span>
-                <br /> {splitAndAdd(totalReferral) > 5 ? "&#9989;" : "❌"}
+                <br /> {splitAndAdd(totalReferral) > 5 ? <>&#9989;</> : "❌"}
+               
               </span>
             </div>
             <div className="col-12 my-3">
