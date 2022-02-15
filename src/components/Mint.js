@@ -21,16 +21,16 @@ const Mint = ({
 
   const handleAmountToInvest = (e) => {
     const value = e.target.value;
-    if (+value < 30) {
-      setAmountToInvest(30);
+    if (+value < 5) {
+      setAmountToInvest(5);
     }
     setAmountToInvest(value);
   };
 
   const handleMinimumValue = (e) => {
     const value = e.target.value;
-    if (+value < 30) {
-      setMinimumBusd(30);
+    if (+value < 5) {
+      setMinimumBusd(5);
     }
     setMinimumBusd(value);
   };
@@ -68,7 +68,7 @@ const Mint = ({
   };
 
   const stakeBUSDToInvest = async () => {
-    if (amountToInvest < "5") {
+    if (amountToInvest < 5 ) {
       alert("The minimum stake of BUSD is 5 $BUSD");
       return;
     }
