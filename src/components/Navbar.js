@@ -15,8 +15,9 @@ const Navbar = ({ connect, disconnect, provider, web3Provider, address }) => {
           <a href="index-2.html#">
             <div className="logo">
               <img
+                className="logo-img"
                 src="assets/images/logo3.png"
-                style={{ width: 200 + "px", height: 212 + "px", background: "transparent" }}
+              
                 alt="logo"
               />
             </div>
@@ -47,6 +48,7 @@ const Navbar = ({ connect, disconnect, provider, web3Provider, address }) => {
                 </a>
               </li>
               <li className="nav-item btnHeader">
+                <a href="https://bscscan.com/address/0x8225E12bBff24B6Cc85c3D3F05B81135D750EAa0" target="_blank">
                 <button
                   style={{ cursor: "pointer" }}
                   type="button"
@@ -56,6 +58,7 @@ const Navbar = ({ connect, disconnect, provider, web3Provider, address }) => {
                 >
                   <span>SmartContract</span>
                 </button>
+                </a>
               </li>
             
               <li className="nav-item btnHeader marginL">

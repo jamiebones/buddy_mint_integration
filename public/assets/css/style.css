@@ -7,6 +7,12 @@
   position: relative;
 }
 
+.logo-img{
+  width: 200px;
+  height: 212px;
+  background: transparent;
+}
+
 *::-moz-selection {
   background: #f9b707;
   color: #fff;

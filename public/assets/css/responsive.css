@@ -117,6 +117,13 @@
 	.mybanner{
 		margin-top: 12px;
 	}
+	.logo{
+		margin-top: -10px;
+	}
+	.logo-img{
+		width: 100px;
+		height: 111px;
+	}
 
 	.amount-input {
 		background-color: #16181c;

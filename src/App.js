@@ -233,7 +233,7 @@ function App() {
       availableForAirDrop,
       timeToNextAirDrop,
     ] = await Promise.all([
-      bscContract.balanceOf(address),
+      contract.getUserTokenBalance(address),
       bscContract.balanceOf(address),
       contract.totalSupply(),
       contract.availableSupply(),
