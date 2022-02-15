@@ -27,7 +27,7 @@ const SellStake = ({
   tokenPrice,
   buddyTokenBalance,
   totalAvailableToSell,
-  totalSupply
+  totalSupply,
 }) => {
   const [tokenToSell, setTokenToSell] = useState("1");
 
@@ -154,7 +154,12 @@ const SellStake = ({
                         id="input-3"
                         onChange={handleTokenToSell}
                       />
-                      <button className="amount-field-button">Max</button>
+                      <button
+                        className="amount-field-button"
+                        onClick={() => setTokenToSell(buddyTokenBalance)}
+                      >
+                        Max
+                      </button>
                     </div>
                   </div>
                 </div>

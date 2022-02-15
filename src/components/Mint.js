@@ -112,7 +112,7 @@ const Mint = ({
           <hr />
           <div className="row">
             <div className="col-6 my-2">
-              <b>Stake</b>
+              <b>My Staked BUSD</b>
             </div>
             <div className="col-6 my-2" id="user-BUSD-staked">
               <span>
@@ -123,7 +123,7 @@ const Mint = ({
           <hr />
           <div className="row">
             <div className="col-6 my-2">
-              <b>Staked</b>
+              <b>Total Staked BUSD</b>
             </div>
             <div className="col-6 my-2" id="total-BUSD-staked">
               <span>
@@ -223,6 +223,7 @@ const Mint = ({
                     <button
                       className="amount-field-button"
                       id="maxAmountButton"
+                      onClick={() => setAmountToInvest(bscBalance)}
                     >
                       Max
                     </button>
