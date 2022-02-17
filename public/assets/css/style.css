@@ -1992,7 +1992,7 @@ header.menu-sticky {
 }
 
 .menu {
-  background: url("../assets/svg/menu.svg") no-repeat;
+  background: url("/assets/svg/menu.svg") no-repeat;
   background-size: 16px 13px;
   background-position: center;
 }

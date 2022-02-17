@@ -18,6 +18,10 @@ const dateConverter = (secs) => {
   //return `${dateSplit[0]}D:${dateSplit[1]}H:${dateSplit[2]}M`
 };
 
+const calculateBUSDToReceiveOnSale = (tokenAmount, tokenPrice) => {
+  return parseFloat(tokenAmount * tokenPrice).toFixed(8);
+};
+
 const SellStake = ({
   account: { web3Provider, signer, address },
   contractAddress,
@@ -109,7 +113,7 @@ const SellStake = ({
             <div className="col-12">
               <h5>
                 <span id="token-price">
-                  <b>{tokenPrice}</b>
+                  <b>${tokenPrice}</b>
                 </span>
               </h5>
             </div>
@@ -123,7 +127,10 @@ const SellStake = ({
             </div>
             <div className="col-6 d-flex justify-content-center">
               <h5 id="sell-calc">
-                <b>0.00</b>
+                <b>
+                  {tokenToSell &&
+                    calculateBUSDToReceiveOnSale(tokenToSell, tokenPrice)} BUSD
+                </b>
               </h5>
             </div>
           </div>

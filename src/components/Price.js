@@ -10,7 +10,7 @@ const Price = ({ tokenPrice }) => {
             <span id="token-priceM">
               {" "}
               &nbsp;&nbsp;
-              <b>{tokenPrice ? tokenPrice : "0.00"}</b>
+              <b>${tokenPrice ? tokenPrice : "0.00"}</b>
             </span>
           </b>
         </h6>

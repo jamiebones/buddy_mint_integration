@@ -71,8 +71,8 @@ const Navbar = ({ connect, disconnect, provider, web3Provider, address }) => {
                   <span>FAQ</span>
                 </button>
               </li>
-            </ul>
-            <div className="navMI py-2">
+
+              <div className="navMI py-2">
               {web3Provider ? (
                   <button
                   style={{ cursor: "pointer" }}
@@ -95,6 +95,8 @@ const Navbar = ({ connect, disconnect, provider, web3Provider, address }) => {
                 </button>
               )}
             </div>
+            </ul>
+            
           </div>
         </nav>
       </header>
